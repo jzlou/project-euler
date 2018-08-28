@@ -50,8 +50,8 @@ def factorize(n):
 
 if __name__ == "__main__":
     """
-    FUCK THIS SHIT WILL NEVER WORK
-    IT TAKES TOO DAMN LONG COMPUTATIONALLY FUUUUUUCK
+    F*** THIS WILL NEVER WORK
+    IT TAKES TOO LONG COMPUTATIONALLY
     """
     i = 1
     while True:
