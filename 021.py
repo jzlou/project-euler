@@ -44,11 +44,6 @@ def test_proper_divisors():
     assert(sorted(pd(220)) == pd_220)
 
 
-def test_sum_proper_divisors():
-    assert(spd(220) == 284)
-    assert(spd(284) == 220)
-
-
 def test_are_amicable():
     assert(are_amicable(220, 284))
     assert(not are_amicable(3, 10))
