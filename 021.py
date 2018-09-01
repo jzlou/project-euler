@@ -53,7 +53,8 @@ if __name__ == "__main__":
     amicables = set()
     for i in range(10000):
         calc = spd(i)
-        if are_amicable(i, calc):
-            amicables.add(i)
-            amicables.add(calc)
+        if calc < 10000 and i != calc:
+            if are_amicable(i, calc):
+                amicables.add(i)
+                amicables.add(calc)
     print(sum(amicables))
