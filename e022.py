@@ -15,3 +15,9 @@ What is the total of all the name scores in the file?
 """
 
 
+with open("resources/names.txt") as file:
+    raw_data = file.read()
+
+data = raw_data.split(',')
+
+print(data[0])
