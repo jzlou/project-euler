@@ -14,20 +14,12 @@ For example, the proper divisors of 220 are 1, 2, 4, 5, 10, 11, 20, 22,
 Evaluate the sum of all the amicable numbers under 10000.
 """
 from math import ceil
+from utils import proper_divisors as pd
 
 
 def spd(x):
     # sum of proper divisors of x
     return sum(pd(x))
-
-
-def pd(x):
-    # returns list of proper divisors of x
-    divisors = []
-    for i in range(1, ceil(x/2)+1):
-        if (x % i) == 0:
-            divisors.append(i)
-    return divisors
 
 
 def are_amicable(x, y):

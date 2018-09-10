@@ -32,6 +32,7 @@ def test_calculate_value():
 
 def test_data_load():
     data = load_sorted_data()
+    print(data.__name__)
     assert(data.index('COLIN') == 938-1)
 
 
