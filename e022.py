@@ -13,11 +13,30 @@ COLIN would obtain a score of 938 * 53 = 49714.
 
 What is the total of all the name scores in the file?
 """
+from functools import reduce
 
 
-with open("resources/names.txt") as file:
-    raw_data = file.read()
+def calculate_value(name):
+    return reduce(lambda x, y: x+y, [ord(c)-ord('A')+1 for c in name.upper()])
 
-data = raw_data.split(',')
 
-print(data[0])
+def load_sorted_data(loc="resources/names.txt"):
+    with open(loc) as file:
+        raw = file.read()
+    return sorted(raw.split(','))
+
+
+def test_calculate_value():
+    assert(calculate_value('COLIN')*938 == 49714)
+
+
+def test_data_load():
+    data = load_sorted_data()
+    assert(data.index('COLIN') == 938-1)
+
+
+if __name__ == "__main__":
+    accum = 0
+    for i, datum in enumerate(load_sorted_data()):
+        accum += (i+1)*calculate_value(datum)
+    print(accum)
