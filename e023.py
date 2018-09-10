@@ -22,5 +22,26 @@ two abundant numbers is less than this limit.
 Find the sum of all the positive integers which cannot be written as the
 sum of two abundant numbers.
 """
+from utils import proper_divisors as pd
 
 
+def find_abundant_less_than(x):
+    abundance = []
+    for i in range(1, x):
+        if sum(pd(i)) > i:
+            abundance.append(i)
+    return abundance
+
+
+def test_abundance():
+    assert(find_abundant_less_than(13) == [12])
+
+
+if __name__ in "__main__":
+    abundant = find_abundant_less_than(28123)
+    set_bi_abundance = set()
+    for i in abundant:
+        for j in abundant:
+            set_bi_abundance.add(i+j)
+    targets = set(range(1,28123)) - set_bi_abundance
+    print(sum(targets))
