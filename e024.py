@@ -26,6 +26,7 @@ def lex_perm(ins):
     returns an array of permutations in lexicographical order
     """
     s_ins = sorted(ins)
+    # permutation returns a list of tuples, so we need to make a string
     return [''.join(str(x) for x in y) for y in permutations(s_ins)]
 
 
