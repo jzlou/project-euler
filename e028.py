@@ -36,6 +36,9 @@ def recur_spiral(prev_sum, n, target):
 
 
 def test_spiral():
+    """
+    TODO: why doesn't this work??
+    """
     assert(recur_spiral(0, 1, 5) == 101)
 
 
