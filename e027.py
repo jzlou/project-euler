@@ -27,7 +27,6 @@ expression that produces the maximum number of primes for consecutive
 values of n, starting with n = 0.
 """
 from utils import is_prime
-from time import time
 
 
 def quad(a, b, n):
@@ -50,7 +49,5 @@ def longest_quad(a_lim, b_lim):
 
 
 if __name__ == "__main__":
-    now = time()
     top = longest_quad(1000, 1000)
-    print(f"product: {top[0]*top[1]}, prime length: {top[2]}")
-    print(f"took: {time() - now} seconds")
+    print(f"{top[0]*top[1]}")
